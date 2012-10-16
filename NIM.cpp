@@ -1,5 +1,6 @@
 //NIM dabs október 1997 <-- holy shit
 #include <iostream>
+#include <iomanip>
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
@@ -126,25 +127,18 @@ void birta( int* hruga )
 	{
 		return;
 	}
-	cout << "                         Hruga nr.: ";
+
+	cout << "Hruga | Eldspytur |" << endl;
+	cout << "------+-----------+-------------" << endl;
 	for (int i = 0; i < hrugufjoldi; i++ )
 	{
-		cout << " " << (i + 1) << "  ";
+		cout << setw(4) << (i + 1) << "  | " << setw(9) << hruga[ i ] << " | ";
+		for (int j = 0; j < hruga[ i ]; j++)
+			cout << "#";
+
+		cout << endl;
 	}
 
-	cout << endl << endl;
-	cout << "Fjoldi eldspytna i hverri hrugu er: ";
-	for ( int c = 0; c < hrugufjoldi; c++ )
-	{
-		if( hruga[c] < 10 )
-		{
-			cout << " " << hruga[ c ] << "  ";
-		}
-		else
-		{
-			cout << hruga[ c ] << "  ";
-		}
-	}
 	cout << endl << endl;
 }
 
