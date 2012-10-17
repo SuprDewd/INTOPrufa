@@ -128,11 +128,11 @@ void birta( int* hruga )
 		return;
 	}
 
-	cout << "Hruga | Eldspytur |" << endl;
-	cout << "------+-----------+-------------" << endl;
+	cout << " Hruga | Eldspytur |" << endl;
+	cout << "-------+-----------+-------------" << endl;
 	for (int i = 0; i < hrugufjoldi; i++ )
 	{
-		cout << setw(4) << (i + 1) << "  | " << setw(9) << hruga[ i ] << " | ";
+		cout << setw(5) << (i + 1) << "  | " << setw(9) << hruga[ i ] << " | ";
 		for (int j = 0; j < hruga[ i ]; j++)
 			cout << "#";
 
@@ -173,7 +173,7 @@ void notandi( int* hruga )
 			continue;
 		}
 	}
-	while ( eldspytur > hruga[ (hrugunumer) - 1 ] || eldspytur < 1 );
+	while ( eldspytur < 1 || eldspytur > hruga[ (hrugunumer) - 1 ] );
 
 	hruga[ hrugunumer - 1 ] -= eldspytur;
 	if( !samtals( hruga ) )
